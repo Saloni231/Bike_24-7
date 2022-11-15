@@ -146,8 +146,8 @@ class LoginViewController: UIViewController {
                     //MARK: Storing in Keychain
                     let _ = KeyChainOperations.saveKey(key: self.usernameTextField.text!, password: Data(self.passwordTextField.text!.utf8))
                     
-                    let dashboard = self.storyboard?.instantiateViewController(withIdentifier: "DashBoardTabBarController")
-                    self.navigationController?.pushViewController(dashboard!, animated: true)
+                    //let dashboard = self.storyboard?.instantiateViewController(withIdentifier: "DashBoardTabBarController")
+                    //self.navigationController?.pushViewController(dashboard!, animated: true)
                 }
                 else {
                     
