@@ -37,6 +37,11 @@ class LoginViewController: UIViewController {
         //Welcome View
         welcomeView.layer.cornerRadius = 70
         
+        
+        
+        
+        
+        
         //Function call for passcode
         //autherizeUserByPasscode()
 
