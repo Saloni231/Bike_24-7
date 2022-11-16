@@ -25,8 +25,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ov-Gd-6kT" userLabel="Welcome View">
                                                 <rect key="frame" x="0.0" y="-70" width="414" height="400"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-Gd-kbQ">
-                                                        <rect key="frame" x="107" y="82.5" width="200" height="185"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bikeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-Gd-kbQ">
+                                                        <rect key="frame" x="107" y="102.5" width="200" height="185"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="185" id="mzb-lC-0aG"/>
                                                             <constraint firstAttribute="width" constant="200" id="pjn-nr-mu4"/>
@@ -39,12 +39,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.43529411764705883" green="0.72549019607843135" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.57713051515322278" green="0.70052049247416459" blue="0.86363636363636365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="3Id-hU-Wpg"/>
                                                     <constraint firstAttribute="trailing" secondItem="YGa-QC-8xA" secondAttribute="trailing" constant="20" id="Ae4-mH-Yqm"/>
                                                     <constraint firstItem="YGa-QC-8xA" firstAttribute="leading" secondItem="8ov-Gd-6kT" secondAttribute="leading" constant="20" id="PvS-4f-nUr"/>
-                                                    <constraint firstItem="YGa-QC-8xA" firstAttribute="top" secondItem="Y2s-Gd-kbQ" secondAttribute="bottom" constant="50" id="ZWd-LN-xjC"/>
+                                                    <constraint firstItem="YGa-QC-8xA" firstAttribute="top" secondItem="Y2s-Gd-kbQ" secondAttribute="bottom" constant="30" id="ZWd-LN-xjC"/>
                                                     <constraint firstItem="Y2s-Gd-kbQ" firstAttribute="centerX" secondItem="8ov-Gd-6kT" secondAttribute="centerX" id="qnM-bI-Aqx"/>
                                                     <constraint firstAttribute="bottom" secondItem="YGa-QC-8xA" secondAttribute="bottom" constant="40" id="zAH-5S-Xdy"/>
                                                 </constraints>
@@ -58,13 +58,13 @@
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-Zb-B4A">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-Zb-B4A">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4Mu-7d-2vS"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                                         <connections>
                                                             <action selector="usernameCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="giK-9E-CNK"/>
                                                             <action selector="usernameValidation:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="EES-T6-cXq"/>
@@ -72,16 +72,17 @@
                                                     </textField>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill the field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ing-Qb-j9V">
                                                         <rect key="frame" x="0.0" y="65" width="374" height="0.0"/>
-                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
+                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="19"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-GS-gvX">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-GS-gvX">
                                                         <rect key="frame" x="0.0" y="80" width="374" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4rn-B3-Jye"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="19"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <action selector="passwordCheck:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="536-i7-9tm"/>
@@ -97,54 +98,62 @@
                                                     <constraint firstAttribute="trailing" secondItem="v6p-f6-u3s" secondAttribute="trailing" id="kJ9-j9-T91"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-ec-vwf">
-                                                <rect key="frame" x="107" y="560" width="200" height="110"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-ec-vwf">
+                                                <rect key="frame" x="117" y="555" width="180" height="125"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-Ju-Y2x">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="r5R-pD-2dz"/>
-                                                            <constraint firstAttribute="width" constant="200" id="zQG-xD-ijC"/>
+                                                            <constraint firstAttribute="height" constant="50" id="r5R-pD-2dz"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="zQG-xD-ijC"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Login">
-                                                            <fontDescription key="titleFontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="20"/>
-                                                            <color key="baseBackgroundColor" red="0.0" green="0.26666666666666666" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="medium">
+                                                            <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                                            <color key="baseBackgroundColor" systemColor="tintColor"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOW-jy-g2R"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geu-Sc-aye">
-                                                        <rect key="frame" x="0.0" y="70" width="200" height="40"/>
+                                                        <rect key="frame" x="0.0" y="75" width="180" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="8ow-WO-e3u"/>
-                                                            <constraint firstAttribute="width" constant="200" id="EwG-ZI-0DR"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="EwG-ZI-0DR"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up">
-                                                            <fontDescription key="titleFontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="20"/>
-                                                            <color key="baseBackgroundColor" red="0.43529411764705883" green="0.72549019607843135" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up" cornerStyle="medium">
+                                                            <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                                            <color key="baseBackgroundColor" red="0.06307203856887203" green="0.33544526476817216" blue="0.76589423648247168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="signUpButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cxa-0Y-tVu"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="tintColor" red="0.0" green="0.6280093267837481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="IRL-qm-hNE"/>
-                                                    <constraint firstAttribute="height" constant="110" id="Mka-NN-vVA"/>
+                                                    <constraint firstItem="geu-Sc-aye" firstAttribute="height" secondItem="0ZX-Ju-Y2x" secondAttribute="height" id="o7B-JQ-7Bn"/>
                                                 </constraints>
                                             </stackView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngwing.com" translatesAutoresizingMaskIntoConstraints="NO" id="I0p-Po-ePH">
+                                                <rect key="frame" x="0.0" y="737" width="414" height="116"/>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.94117647058823528" green="0.93725490196078431" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="bKI-Bp-l8s" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" constant="20" id="1XG-dO-pmR"/>
-                                            <constraint firstItem="EMz-ec-vwf" firstAttribute="centerX" secondItem="qhb-t1-DVS" secondAttribute="centerX" id="IhJ-0s-IgD"/>
+                                            <constraint firstItem="EMz-ec-vwf" firstAttribute="centerX" secondItem="qhb-t1-DVS" secondAttribute="centerX" id="3CZ-5Y-4u2"/>
+                                            <constraint firstItem="I0p-Po-ePH" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" id="4qG-RN-8b7"/>
+                                            <constraint firstAttribute="bottom" secondItem="I0p-Po-ePH" secondAttribute="bottom" constant="47" id="8lP-kD-9ki"/>
                                             <constraint firstAttribute="trailing" secondItem="bKI-Bp-l8s" secondAttribute="trailing" constant="20" id="NEN-zf-uN9"/>
                                             <constraint firstItem="bKI-Bp-l8s" firstAttribute="top" secondItem="8ov-Gd-6kT" secondAttribute="bottom" constant="50" id="Uws-d0-ndE"/>
-                                            <constraint firstItem="EMz-ec-vwf" firstAttribute="top" secondItem="bKI-Bp-l8s" secondAttribute="bottom" constant="50" id="cAn-1l-DeQ"/>
+                                            <constraint firstItem="I0p-Po-ePH" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" id="btb-d3-rZf"/>
                                             <constraint firstItem="8ov-Gd-6kT" firstAttribute="top" secondItem="qhb-t1-DVS" secondAttribute="top" constant="-70" id="fDa-Zm-A1I"/>
+                                            <constraint firstAttribute="bottom" secondItem="I0p-Po-ePH" secondAttribute="bottom" constant="47" id="fcx-b4-vG2"/>
+                                            <constraint firstItem="I0p-Po-ePH" firstAttribute="top" secondItem="EMz-ec-vwf" secondAttribute="bottom" constant="57" id="hPk-Fy-12x"/>
+                                            <constraint firstItem="EMz-ec-vwf" firstAttribute="top" secondItem="bKI-Bp-l8s" secondAttribute="bottom" constant="45" id="iN9-3Y-tna"/>
+                                            <constraint firstAttribute="trailing" secondItem="I0p-Po-ePH" secondAttribute="trailing" id="pqg-ID-vQS"/>
                                             <constraint firstItem="8ov-Gd-6kT" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" id="thb-gL-CaY"/>
                                             <constraint firstAttribute="height" constant="900" id="wOa-EO-gHu"/>
                                             <constraint firstAttribute="trailing" secondItem="8ov-Gd-6kT" secondAttribute="trailing" id="xK5-tt-4dG"/>
@@ -198,7 +207,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oZl-Jf-cA5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.26666666666666666" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -242,7 +251,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="O8U-mF-L4V"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="19"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="nameCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="mFg-5z-mMZ"/>
@@ -260,7 +269,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2nI-Cr-qdW"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="19"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                         <connections>
                                                             <action selector="emailCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="Utf-ZU-5w9"/>
@@ -279,7 +288,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2Y3-en-nqb"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="19"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
                                                             <action selector="mobileCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="ri2-tf-5e9"/>
@@ -298,7 +307,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="97a-vo-kDD"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="19"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <action selector="passwordCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="aSM-lm-TGt"/>
@@ -317,7 +326,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="fLG-0p-ojv"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                                        <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <action selector="confirmPasswordCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="EwQ-RN-Qg0"/>
@@ -342,22 +351,22 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k5-5t-eJR">
-                                                <rect key="frame" x="107" y="660" width="200" height="50"/>
+                                                <rect key="frame" x="117" y="660" width="180" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="c1f-Ze-d9O"/>
+                                                    <constraint firstAttribute="width" constant="180" id="c1f-Ze-d9O"/>
                                                     <constraint firstAttribute="height" constant="50" id="zUl-SI-BJx"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Sign Up">
-                                                    <fontDescription key="titleFontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="20"/>
-                                                    <color key="baseBackgroundColor" red="0.0" green="0.2666666667" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Sign Up" cornerStyle="medium">
+                                                    <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                                    <color key="baseBackgroundColor" red="0.045447282489999997" green="0.35929325220000002" blue="0.76570361850000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="signUpButtonClicked:" destination="P1Z-on-r4J" eventType="touchUpInside" id="8bN-gX-v6p"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.94117647058823528" green="0.93725490196078431" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.80423654088750096" green="0.83290244697951465" blue="0.91890016525555551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1200" id="7C4-Zi-ch1"/>
                                             <constraint firstAttribute="trailing" secondItem="ZRP-S7-USv" secondAttribute="trailing" constant="20" id="Dt3-Hh-IFe"/>
@@ -432,13 +441,21 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bikeLogo" width="350" height="350"/>
         <image name="chevron.backward.2" catalog="system" width="128" height="105"/>
         <image name="login" width="612" height="566"/>
+        <image name="pngwing.com" width="1988" height="1136"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

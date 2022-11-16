@@ -30,23 +30,39 @@ class LoginViewController: UIViewController {
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Display Image
         appImage.layer.cornerRadius = appImage.frame.height/2
         
         //Welcome View
         welcomeView.layer.cornerRadius = 70
         
+        usernameTextField.layer.borderWidth = 0.2
+        usernameTextField.layer.cornerRadius = 9
+        passwordTextField.layer.borderWidth = 0.2
+        passwordTextField.layer.cornerRadius = 9
         
+        //Imagviews for textfield logo
+        let emailImageView = UIImageView()
+        let passwordImageView = UIImageView()
+        let emailIcon = UIImage(named: "email.png")
+        let passwordIcon = UIImage(named: "password.png")
+        emailImageView.image = emailIcon
+        passwordImageView.image = passwordIcon
+        passwordTextField.leftViewMode = .always
+        usernameTextField.leftViewMode = .always
         
+        usernameTextField.leftView = emailImageView
+        passwordTextField.leftView = passwordImageView
         
+    
         
         
         //Function call for passcode
         //autherizeUserByPasscode()
 
         // Function call for face Id/ Touch Id
-        authorizeUserByBiometerics()
+        //authorizeUserByBiometerics()
         
     }
     
@@ -54,7 +70,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         //Hiding Error Message
-        usernameErrorMsg.isHidden = true
+        usernameErrorMsg.isHidden = false
         passwordErrorMsg.isHidden = true
         
         //resetting text fields
