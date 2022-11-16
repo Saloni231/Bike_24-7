@@ -18,24 +18,20 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var appImage: UIImageView!
 
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    
-    
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //Welcome View
         welcomeView.layer.cornerRadius = 70
         
-        
+        //Text Field Border
         usernameTextField.layer.borderWidth = 0.2
         usernameTextField.layer.cornerRadius = 9
         passwordTextField.layer.borderWidth = 0.2

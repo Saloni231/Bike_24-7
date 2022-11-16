@@ -35,6 +35,7 @@ class SignUpViewController: UIViewController {
         signUpImage.layer.borderColor = UIColor("#0C5CC3").cgColor
         signUpImage.layer.borderWidth = 1
         
+        //Text Field Border
         nameTextField.layer.borderWidth = 0.2
         emailTextField.layer.borderWidth = 0.2
         mobileTextField.layer.borderWidth = 0.2
