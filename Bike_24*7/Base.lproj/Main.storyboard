@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngwing.com" translatesAutoresizingMaskIntoConstraints="NO" id="c1j-4V-gJx">
-                                <rect key="frame" x="0.0" y="744" width="428" height="182"/>
+                                <rect key="frame" x="0.0" y="764" width="428" height="162"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYR-vb-cgP">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
@@ -155,7 +155,7 @@
                             <constraint firstAttribute="bottom" secondItem="c1j-4V-gJx" secondAttribute="bottom" id="IBi-IR-rZ5"/>
                             <constraint firstItem="qhb-t1-DVS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="PHb-6M-YzK"/>
                             <constraint firstItem="c1j-4V-gJx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TKB-q2-GJU"/>
-                            <constraint firstItem="c1j-4V-gJx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="700" id="VgD-jM-ItX"/>
+                            <constraint firstItem="c1j-4V-gJx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="720" id="VgD-jM-ItX"/>
                             <constraint firstItem="WYR-vb-cgP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vok-Zr-CIn"/>
                             <constraint firstItem="WYR-vb-cgP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZYg-P3-euh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c1j-4V-gJx" secondAttribute="trailing" id="beE-Em-CQm"/>
