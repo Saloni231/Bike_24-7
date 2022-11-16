@@ -40,6 +40,46 @@ class SignUpViewController: UIViewController {
         signUpImage.layer.cornerRadius = signUpImage.frame.height / 2
         signUpImage.layer.borderColor = UIColor("#004445").cgColor
         signUpImage.layer.borderWidth = 1
+        
+        nameTextField.layer.borderWidth = 0.2
+        emailTextField.layer.borderWidth = 0.2
+        mobileTextField.layer.borderWidth = 0.2
+        passwordTextField.layer.borderWidth = 0.2
+        confirmPasswordTextField.layer.borderWidth = 0.2
+        
+        nameTextField.layer.cornerRadius = 9
+        emailTextField.layer.cornerRadius = 9
+        mobileTextField.layer.cornerRadius = 9
+        passwordTextField.layer.cornerRadius = 9
+        confirmPasswordTextField.layer.cornerRadius = 9
+        
+        // MARK: - ImageViews for TextField Icons starts
+        let usernameImageView = UIImageView()
+        let emailImageView = UIImageView()
+        let mobileImageView = UIImageView()
+        let passwordImageView = UIImageView()
+        let confirmPasswordImageView = UIImageView()
+        // MARK: - ImageViews for TextField Icons starts
+        
+        // Setting Images to imageviews
+        usernameImageView.image = UIImage(named: "username.png")
+        emailImageView.image = UIImage(named: "email.png")
+        mobileImageView.image = UIImage(named: "phone.png")
+        passwordImageView.image = UIImage(named: "password.png")
+        confirmPasswordImageView.image = UIImage(named: "confirmPass.png")
+        
+        // Settign Properties ti textfields
+        nameTextField.leftViewMode = .always
+        emailTextField.leftViewMode = .always
+        mobileTextField.leftViewMode = .always
+        passwordTextField.leftViewMode = .always
+        confirmPasswordTextField.leftViewMode = .always
+        
+        nameTextField.leftView = usernameImageView
+        emailTextField.leftView = emailImageView
+        mobileTextField.leftView = mobileImageView
+        passwordTextField.leftView = passwordImageView
+        confirmPasswordTextField.leftView = confirmPasswordImageView
     }
     
     //MARK: View Will Appear
