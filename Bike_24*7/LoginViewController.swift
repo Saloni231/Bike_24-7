@@ -17,9 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var welcomeView: UIView!
     
     @IBOutlet weak var appImage: UIImageView!
-    
-    @IBOutlet weak var usernameErrorMsg: UILabel!
-    @IBOutlet weak var passwordErrorMsg: UILabel!
+
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -31,11 +29,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Display Image
-        appImage.layer.cornerRadius = appImage.frame.height/2
         
         //Welcome View
         welcomeView.layer.cornerRadius = 70
+        
         
         usernameTextField.layer.borderWidth = 0.2
         usernameTextField.layer.cornerRadius = 9
@@ -54,24 +51,12 @@ class LoginViewController: UIViewController {
         
         usernameTextField.leftView = emailImageView
         passwordTextField.leftView = passwordImageView
-        
-    
-        
-        
-        //Function call for passcode
-        //autherizeUserByPasscode()
 
-        // Function call for face Id/ Touch Id
-        //authorizeUserByBiometerics()
         
     }
     
     //MARK: View Will Appear
     override func viewWillAppear(_ animated: Bool) {
-        
-        //Hiding Error Message
-        usernameErrorMsg.isHidden = false
-        passwordErrorMsg.isHidden = true
         
         //resetting text fields
         usernameTextField.text = ""
@@ -86,30 +71,14 @@ class LoginViewController: UIViewController {
         
         if !(TextFieldValidation.emailValidation(usernameTextField.text!)) {
             
-            usernameErrorMsg.text = "Email ID should be in valid Format. E.g. abc@domain.com"
-            usernameErrorMsg.isHidden = false
+            alert("Email ID should be in valid Format. E.g. abc@domain.com")
         }
         else if (usernameTextField.text!.isEmpty) {
             
-            usernameErrorMsg.text = "Please fill the field"
-            usernameErrorMsg.isHidden = false
-        }
-        else {
-            
-            usernameErrorMsg.isHidden = true
+            alert("Please Enter Email ID")
         }
     }
     
-    // Checking username text field while editing changed
-    //MARK: Using Editing Changed
-    @IBAction func usernameCheck(_ sender: Any) {
-        
-        if (TextFieldValidation.emailValidation(usernameTextField.text!)){
-            
-            usernameErrorMsg.isHidden = true
-        }
-            
-    }
     
     //MARK: Password Text Field Validation
     
@@ -119,16 +88,10 @@ class LoginViewController: UIViewController {
         
         if (passwordTextField.text!.isEmpty) {
             
-            passwordErrorMsg.isHidden = false
+            alert("Please Enter Password")
         }
     }
     
-    //Hidding error message when user type some value for password (Editing Changed)
-    //MARK: Using Editing Changed
-    @IBAction func passwordTyped(_ sender: Any) {
-        
-        passwordErrorMsg.isHidden = true
-    }
     
     
     //MARK: Credential Validation
@@ -138,37 +101,31 @@ class LoginViewController: UIViewController {
         // Checking if username text field is empty
         if (usernameTextField.text!.isEmpty) {
             
-            usernameErrorMsg.text = "Please fill the field"
-            usernameErrorMsg.isHidden = false
+            alert("Please Enter Email ID")
         }
         
         //Checking if username is valid
         else if !(TextFieldValidation.emailValidation(usernameTextField.text!)) {
             
-            usernameErrorMsg.text = "Username should be in valid Format. E.g. abc@domain.com"
-            usernameErrorMsg.isHidden = false
+            alert("Username should be in valid Format. E.g. abc@domain.com")
         }
         
         //Checking if password text field is empty
-        if (passwordTextField.text!.isEmpty) {
+        else if (passwordTextField.text!.isEmpty) {
             
-            passwordErrorMsg.text = "Please fill the field"
-            passwordErrorMsg.isHidden = false
+            alert("Please Enter Password")
         }
         
         //Firebase authentication
-        if (usernameErrorMsg.isHidden && passwordErrorMsg.isHidden) {
+        else {
             
             //MARK: Sign In using Firebase
             Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!, completion: {(result, error) -> Void in
                 
                 if error == nil {
                     
-                    //MARK: Storing in Keychain
-                    let _ = KeyChainOperations.saveKey(key: self.usernameTextField.text!, password: Data(self.passwordTextField.text!.utf8))
-                    
-                    //let dashboard = self.storyboard?.instantiateViewController(withIdentifier: "DashBoardTabBarController")
-                    //self.navigationController?.pushViewController(dashboard!, animated: true)
+                    let home = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController")
+                    self.navigationController?.pushViewController(home!, animated: true)
                 }
                 else {
                     
@@ -207,117 +164,9 @@ extension LoginViewController {
     
     //MARK: Alert Action
     func alert(_ msg: String) {
-        let alertBox = UIAlertController(title: "Login Failed!", message: msg, preferredStyle: .alert)
+        let alertBox = UIAlertController(title: "Login Error!", message: msg, preferredStyle: .alert)
         alertBox.addAction(UIAlertAction(title: "Okay", style: .destructive))
         self.present(alertBox, animated: true, completion: nil)
-    }
-    
-    //MARK: Authentication Failure Alert Action
-    func authFailureAlert(_ msg: String) {
-        
-        let alert = UIAlertController(title: "Autherization Failed!", message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .destructive, handler: { (action: UIAlertAction) in exit(-1)}))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    //MARK: Authentication Success Alert Action
-    func authSuccessAlert() {
-        
-        let sucessBox = UIAlertController(title: "Autherization Sucess!!", message: "Successfully authenticated user", preferredStyle: .alert)
-        self.present(sucessBox, animated: true, completion: { Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {_ in
-            self.dismiss(animated: true, completion: nil)
-        })})
-    }
-    
-    //MARK: Face ID / Touch ID Authentication
-    func authorizeUserByBiometerics() {
-        
-        let authContextBio = LAContext()
-        
-        var authErrorBio: NSError?
-        
-        let authReasonBio = "Application Needs to authenticate user for Security Reasons."
-        
-        if authContextBio.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authErrorBio) {
-            
-            authContextBio.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: authReasonBio, reply: {
-                success, error in
-                
-                DispatchQueue.main.async {
-                    
-                    if let evaluateError = error as NSError?{
-                            
-                        switch evaluateError.code {
-                        case LAError.authenticationFailed.rawValue :
-                            self.authFailureAlert("Authentication Failed as user provided invalid authentication")
-                        case LAError.userCancel.rawValue :
-                            self.authFailureAlert("Authentication Failed as user pressed cancel button")
-                        case LAError.systemCancel.rawValue :
-                            self.authFailureAlert("Authentication Failed as some other application came in foreground")
-                        default :
-                            self.authFailureAlert("Some other error occured")
-                    
-                        }
-                        
-                    }else {
-                        self.authSuccessAlert()
-                    }
-                }
-            })
-        }
-        else {
-            
-            switch authErrorBio!.code {
-            case LAError.biometryLockout.rawValue :
-                self.authFailureAlert("Biometeric Authentication is lock out.")
-            case LAError.biometryNotEnrolled.rawValue :
-                self.authFailureAlert("Biometeric is not enrolled by user.")
-            case LAError.biometryNotAvailable.rawValue :
-                self.authFailureAlert("Biometeric is not available on this device")
-            default :
-                self.authFailureAlert("Some other error occured")
-        
-            }
-        }
-    }
-    
-    //MARK: Passcode Autherization
-    func autherizeUserByPasscode() {
-        
-        let authContext = LAContext()
-        
-        var authError : NSError?
-        
-        let authReason = "Application Needs to authenticate user for Security Reasons."
-        
-        if authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
-            
-            authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: authReason, reply: {
-                success, error in
-                
-                DispatchQueue.main.async {
-                    
-                    if let evaluteError = error as NSError? {
-                        
-                        switch evaluteError.code {
-                            
-                        case LAError.authenticationFailed.rawValue :
-                            self.authFailureAlert("Authentication Failed as user failed to provide valid credentials.")
-                        case LAError.userCancel.rawValue :
-                            self.authFailureAlert("Authentication Failed as user pressed cancel button.")
-                        case LAError.systemCancel.rawValue :
-                            self.authFailureAlert("Authentication Failed as some other application came in foreground")
-                        default:
-                            self.authFailureAlert("Some other error occured")
-                        }
-                    }
-                    else {
-                        self.authSuccessAlert()
-                    }
-                }
-            })
-        }
-        
     }
 }
 
