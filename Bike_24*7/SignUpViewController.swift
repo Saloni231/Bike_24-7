@@ -61,7 +61,7 @@ class SignUpViewController: UIViewController {
         emailImageView.image = UIImage(named: "email.png")
         mobileImageView.image = UIImage(named: "phone.png")
         passwordImageView.image = UIImage(named: "password.png")
-        confirmPasswordImageView.image = UIImage(named: "confirmPassword.png")
+        confirmPasswordImageView.image = UIImage(named: "ConfirmPassword.png")
         
         // Settign Properties ti textfields
         nameTextField.leftViewMode = .always

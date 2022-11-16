@@ -71,13 +71,13 @@ class LoginViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func usernameValidation(_ sender: Any) {
         
-        if !(TextFieldValidation.emailValidation(usernameTextField.text!)) {
-            
-            alert("Email ID should be in valid Format. E.g. abc@domain.com")
-        }
-        else if (usernameTextField.text!.isEmpty) {
+        if (usernameTextField.text!.isEmpty) {
             
             alert("Please Enter Email ID")
+        }
+        else if !(TextFieldValidation.emailValidation(usernameTextField.text!)) {
+            
+            alert("Email ID should be in valid Format. E.g. abc@domain.com")
         }
     }
     
