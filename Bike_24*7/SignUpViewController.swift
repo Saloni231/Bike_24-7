@@ -83,11 +83,7 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func nameValidation(_ sender: Any) {
         
-        if (nameTextField.text!.isEmpty) {
-            
-            alert("Please Enter Name")
-        }
-        else if !(TextFieldValidation.nameValidation(nameTextField.text!)) {
+        if (!(TextFieldValidation.nameValidation(nameTextField.text!))  && !(nameTextField.text!.isEmpty)) {
             
             alert("Name should be valid (i.e. Atleast 4 characters")
             
@@ -102,11 +98,7 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func emailValidation(_ sender: Any) {
         
-        if (emailTextField.text!.isEmpty) {
-            
-            alert("Please Enter Email ID")
-        }
-        else if !(TextFieldValidation.emailValidation(emailTextField.text!)) {
+        if (!(TextFieldValidation.emailValidation(emailTextField.text!))  && !(emailTextField.text!.isEmpty)) {
             
             alert("Email ID should be in valid Format. E.g. abc@domain.com")
         }
@@ -119,11 +111,7 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func mobileValidation(_ sender: Any) {
         
-        if (mobileTextField.text!.isEmpty) {
-            
-            alert("Please Enter Mobile")
-        }
-        else if !(TextFieldValidation.mobileValidation(mobileTextField.text!)) {
+        if (!(TextFieldValidation.mobileValidation(mobileTextField.text!))  && !(mobileTextField.text!.isEmpty)) {
             
             alert("Mobile Number should be 10 digit number. E.g. 1234567890")
         }
@@ -136,11 +124,7 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func passwordValidation(_ sender: Any) {
         
-        if (passwordTextField.text!.isEmpty) {
-            
-            alert("Please Enter Password")
-        }
-        else if !(TextFieldValidation.passwordValidation(passwordTextField.text!)) {
+        if (!(TextFieldValidation.passwordValidation(passwordTextField.text!))  && !(passwordTextField.text!.isEmpty)) {
             
             alert("Password must be Alpha Numeric.")
         }
@@ -153,11 +137,7 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func confirmPasswordValidation(_ sender: Any) {
         
-        if (confirmPasswordTextField.text!.isEmpty) {
-            
-            alert("Please Enter Confirm Password")
-        }
-        else if !(TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!)) {
+        if (!(TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!))  && !(confirmPasswordTextField.text!.isEmpty)) {
             
             alert("Should be same as password")
         }

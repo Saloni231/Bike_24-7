@@ -67,30 +67,11 @@ class LoginViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func usernameValidation(_ sender: Any) {
         
-        if (usernameTextField.text!.isEmpty) {
-            
-            alert("Please Enter Email ID")
-        }
-        else if !(TextFieldValidation.emailValidation(usernameTextField.text!)) {
+        if (!(TextFieldValidation.emailValidation(usernameTextField.text!)) && !(usernameTextField.text!.isEmpty)) {
             
             alert("Email ID should be in valid Format. E.g. abc@domain.com")
         }
     }
-    
-    
-    //MARK: Password Text Field Validation
-    
-    //Checking if password field is empty (Editing did end)
-    //MARK: Using Editing Did End
-    @IBAction func passwordCheck(_ sender: Any) {
-        
-        if (passwordTextField.text!.isEmpty) {
-            
-            alert("Please Enter Password")
-        }
-    }
-    
-    
     
     //MARK: Credential Validation
     
@@ -134,7 +115,7 @@ class LoginViewController: UIViewController {
                         case 17009:
                             self.alert("Password Does Not Match")
                         case 17011:
-                            self.alert("User Does Not Exist.\n Please Sign Up.")
+                            self.alert("Incorrect Email ID Or Password. \n If Don't have an account.\n Please Sign Up.")
                         default:
                             print("Something else happened.")
                         }

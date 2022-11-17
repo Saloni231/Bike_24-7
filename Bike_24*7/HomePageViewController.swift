@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomePageViewController: UIViewController {
 
@@ -15,15 +16,18 @@ class HomePageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func signOutClicked(_ sender: Any) {
+        
+        do {
+            //Signing out of firebase
+            try Auth.auth().signOut()
+            
+            //Navigating back to login view
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch(let error) {
+            
+            print(error.localizedDescription)
+        }
     }
-    */
 
 }
