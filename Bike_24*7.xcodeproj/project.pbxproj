@@ -22,7 +22,6 @@
 		9A52BFDE292290A500AEC548 /* Bike_24_7UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52BFDD292290A500AEC548 /* Bike_24_7UITestsLaunchTests.swift */; };
 		9A52BFEB292294F400AEC548 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52BFEA292294F400AEC548 /* SignUpViewController.swift */; };
 		9A52BFED292295BA00AEC548 /* TextFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52BFEC292295BA00AEC548 /* TextFieldValidation.swift */; };
-		9A52BFF02922972700AEC548 /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9A52BFEF2922972700AEC548 /* UIColorHexSwift */; };
 		9A52BFF2292297D800AEC548 /* DBOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52BFF1292297D800AEC548 /* DBOperations.swift */; };
 		9A52BFF42922A1A800AEC548 /* KeyChainOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A52BFF32922A1A800AEC548 /* KeyChainOperations.swift */; };
 		9AEF40862924BDC100EB1699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AEF40852924BDC100EB1699 /* GoogleService-Info.plist */; };
@@ -83,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A52BFF02922972700AEC548 /* UIColorHexSwift in Frameworks */,
 				29BCCA2C3A1302F11DB5E8D3 /* Pods_Bike_24_7.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +207,6 @@
 			);
 			name = "Bike_24*7";
 			packageProductDependencies = (
-				9A52BFEF2922972700AEC548 /* UIColorHexSwift */,
 			);
 			productName = "Bike_24*7";
 			productReference = 9A52BFB4292290A300AEC548 /* Bike_24*7.app */;
@@ -287,7 +284,6 @@
 			);
 			mainGroup = 9A52BFAB292290A300AEC548;
 			packageReferences = (
-				9A52BFEE2922972700AEC548 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
 			);
 			productRefGroup = 9A52BFB5292290A300AEC548 /* Products */;
 			projectDirPath = "";
@@ -788,25 +784,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9A52BFEE2922972700AEC548 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yeahdongcn/UIColor-Hex-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9A52BFEF2922972700AEC548 /* UIColorHexSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A52BFEE2922972700AEC548 /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
-			productName = UIColorHexSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9A52BFC0292290A300AEC548 /* Bike_24_7.xcdatamodeld */ = {

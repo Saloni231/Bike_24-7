@@ -9,7 +9,6 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
-import UIColorHexSwift
 
 class SignUpViewController: UIViewController {
     
@@ -32,7 +31,7 @@ class SignUpViewController: UIViewController {
 
         //Display Image
         signUpImage.layer.cornerRadius = signUpImage.frame.height / 2
-        signUpImage.layer.borderColor = UIColor("#0C5CC3").cgColor
+        signUpImage.layer.borderColor = UIColor.blue.cgColor
         signUpImage.layer.borderWidth = 1
         
         //Text Field Border
@@ -270,6 +269,6 @@ extension SignUpViewController {
         
         let alertBox = UIAlertController(title: "Sign Up Error!!", message: msg, preferredStyle: .alert)
         alertBox.addAction(UIAlertAction(title: "Okay", style: .destructive))
-        self.present(alertBox, animated: true, completion: nil)
+        self.parent?.present(alertBox, animated: true, completion: nil)
     }
 }

@@ -164,7 +164,7 @@ extension LoginViewController {
     func alert(_ msg: String) {
         let alertBox = UIAlertController(title: "Login Error!", message: msg, preferredStyle: .alert)
         alertBox.addAction(UIAlertAction(title: "Okay", style: .destructive))
-        self.present(alertBox, animated: true, completion: nil)
+        self.parent?.present(alertBox, animated: true, completion: nil)
     }
 }
 
