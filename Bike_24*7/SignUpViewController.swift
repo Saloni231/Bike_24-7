@@ -23,6 +23,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    
+    @IBOutlet weak var nameErrorMsg: UILabel!
+    @IBOutlet weak var emailErrorMsg: UILabel!
+    @IBOutlet weak var mobileErrorMsg: UILabel!
+    @IBOutlet weak var passwordErrorView: UIStackView!
+    @IBOutlet weak var passwordErrorMsg: UILabel!
+    @IBOutlet weak var passwordInfo: UIButton!
+    @IBOutlet weak var confirmPasswordErrorMsg: UILabel!
+    
     @IBOutlet weak var signUpButton: UIButton!
     
     //MARK: View Did Load
@@ -33,19 +42,6 @@ class SignUpViewController: UIViewController {
         signUpImage.layer.cornerRadius = signUpImage.frame.height / 2
         signUpImage.layer.borderColor = UIColor.blue.cgColor
         signUpImage.layer.borderWidth = 1
-        
-        //Text Field Border
-        nameTextField.layer.borderWidth = 0.2
-        emailTextField.layer.borderWidth = 0.2
-        mobileTextField.layer.borderWidth = 0.2
-        passwordTextField.layer.borderWidth = 0.2
-        confirmPasswordTextField.layer.borderWidth = 0.2
-        
-        nameTextField.layer.cornerRadius = 9
-        emailTextField.layer.cornerRadius = 9
-        mobileTextField.layer.cornerRadius = 9
-        passwordTextField.layer.cornerRadius = 9
-        confirmPasswordTextField.layer.cornerRadius = 9
         
         // MARK: - ImageViews for TextField Icons starts
         let usernameImageView = UIImageView()
@@ -77,19 +73,56 @@ class SignUpViewController: UIViewController {
         confirmPasswordTextField.leftView = confirmPasswordImageView
     }
     
+    //MARK: View will appear
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //Text Field Border
+        nameTextField.layer.borderWidth = 0.2
+        emailTextField.layer.borderWidth = 0.2
+        mobileTextField.layer.borderWidth = 0.2
+        passwordTextField.layer.borderWidth = 0.2
+        confirmPasswordTextField.layer.borderWidth = 0.2
+        
+        nameTextField.layer.cornerRadius = 9
+        emailTextField.layer.cornerRadius = 9
+        mobileTextField.layer.cornerRadius = 9
+        passwordTextField.layer.cornerRadius = 9
+        confirmPasswordTextField.layer.cornerRadius = 9
+        
+        nameTextField.layer.borderColor = UIColor.black.cgColor
+        emailTextField.layer.borderColor = UIColor.black.cgColor
+        mobileTextField.layer.borderColor = UIColor.black.cgColor
+        passwordTextField.layer.borderColor = UIColor.black.cgColor
+        confirmPasswordTextField.layer.borderColor = UIColor.black.cgColor
+    }
+    
     //MARK: Name Text Field Validation
     
     //Validating name text field when editing did end
     //MARK: Using Editing Did End
     @IBAction func nameValidation(_ sender: Any) {
         
-        if (!(TextFieldValidation.nameValidation(nameTextField.text!))  && !(nameTextField.text!.isEmpty)) {
+        if (!(TextFieldValidation.nameValidation(nameTextField.text!)) &&  !(nameTextField.text!.isEmpty)) {
+            nameTextField.layer.borderColor = UIColor.red.cgColor
+            nameTextField.layer.borderWidth = 1
             
-            alert("Name should be valid (i.e. Atleast 4 characters")
-            
+            nameErrorMsg.text = "Name should be valid (i.e. Atleast 4 characters)"
+            nameErrorMsg.isHidden = false
         }
     }
     
+    //Checking name text field while editing changed
+    //MARK: Using Editing Changed
+    @IBAction func nameCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.nameValidation(nameTextField.text!)) {
+            
+            nameTextField.layer.borderColor = UIColor.green.cgColor
+            nameTextField.layer.borderWidth = 1
+            
+            nameErrorMsg.isHidden = true
+        }
+    }
     
     //MARK: Email Text Field Validation
     
@@ -98,12 +131,29 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func emailValidation(_ sender: Any) {
         
-        if (!(TextFieldValidation.emailValidation(emailTextField.text!))  && !(emailTextField.text!.isEmpty)) {
+        if (!(TextFieldValidation.emailValidation(emailTextField.text!)) && !(emailTextField.text!.isEmpty)) {
             
-            alert("Email ID should be in valid Format. E.g. abc@domain.com")
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            emailTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.text = "Email ID should be in valid Format. E.g. abc@domain.com"
+            emailErrorMsg.textColor = .systemRed
+            emailErrorMsg.isHidden = false
         }
     }
     
+    //Checking email text field while editing changed
+    //MARK: Using Editing Changed
+    @IBAction func emailCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.emailValidation(emailTextField.text!)) {
+            
+            emailTextField.layer.borderColor = UIColor.green.cgColor
+            emailTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.isHidden = true
+        }
+    }
     
     //MARK: Mobile Text Field Validation
     
@@ -111,12 +161,29 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func mobileValidation(_ sender: Any) {
         
-        if (!(TextFieldValidation.mobileValidation(mobileTextField.text!))  && !(mobileTextField.text!.isEmpty)) {
+        if (!(TextFieldValidation.mobileValidation(mobileTextField.text!)) && !(mobileTextField.text!.isEmpty)) {
             
-            alert("Mobile Number should be 10 digit number. E.g. 1234567890")
+            mobileTextField.layer.borderColor = UIColor.red.cgColor
+            mobileTextField.layer.borderWidth = 1
+            
+            mobileErrorMsg.text = "Mobile Number should be 10 digit number. E.g. 1234567890"
+            mobileErrorMsg.textColor = .systemRed
+            mobileErrorMsg.isHidden = false
         }
     }
     
+    //Checking mobile text field while editing changed
+    //MARK: Using Editing Changed
+    @IBAction func mobileCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.mobileValidation(mobileTextField.text!)) {
+            
+            mobileTextField.layer.borderColor = UIColor.green.cgColor
+            mobileTextField.layer.borderWidth = 1
+            
+            mobileErrorMsg.isHidden = true
+        }
+    }
     
     //MARK: Password Text Field Validation
     
@@ -124,91 +191,180 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Did End
     @IBAction func passwordValidation(_ sender: Any) {
         
-        if (!(TextFieldValidation.passwordValidation(passwordTextField.text!))  && !(passwordTextField.text!.isEmpty)) {
+        if (!(TextFieldValidation.passwordValidation(passwordTextField.text!)) && !(passwordTextField.text!.isEmpty)) {
             
-            alert("Password must be Alpha Numeric.")
+            passwordErrorView.isHidden = false
+            
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderWidth = 1
+            
+            passwordErrorMsg.text =  "Password must follows policy"
+            passwordErrorMsg.textColor = .systemRed
+            passwordErrorMsg.isHidden = false
         }
     }
     
+    //Checking password text field while editing changed
+    //MARK: Using Editing Changed
+    @IBAction func passwordCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.passwordValidation(passwordTextField.text!)) {
+            
+            passwordTextField.layer.borderColor = UIColor.green.cgColor
+            passwordTextField.layer.borderWidth = 1
+
+            passwordErrorMsg.isHidden = true
+            
+            passwordErrorView.isHidden = true
+        }
+    }
     
     //MARK: Confirm Password Text Field Validation
+    
     
     //Validating confirm password text field when editing did end
     //MARK: Using Editing Did End
     @IBAction func confirmPasswordValidation(_ sender: Any) {
         
-        if (!(TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!))  && !(confirmPasswordTextField.text!.isEmpty)) {
+        if (!(TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!)) && !(confirmPasswordTextField.text!.isEmpty)) {
             
-            alert("Should be same as password")
+            confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+            confirmPasswordTextField.layer.borderWidth = 1
+            
+            confirmPasswordErrorMsg.text = "Should be same as password"
+            confirmPasswordErrorMsg.textColor = .systemRed
+            confirmPasswordErrorMsg.isHidden = false
         }
     }
     
+    //Checking confirm password text field while editing changed
+    //MARK: Using Editing Changed
+    @IBAction func confirmPasswordCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!)) {
+            
+            confirmPasswordTextField.layer.borderColor = UIColor.green.cgColor
+            confirmPasswordTextField.layer.borderWidth = 1
+            
+            confirmPasswordErrorMsg.isHidden = true
+        }
+    }
     
     //MARK: Credential Validation
     @IBAction func signUpButtonClicked(_ sender: Any) {
         
-        // Checking Name Text Field
+        // Checking Name Text Field is empty
         if (nameTextField.text!.isEmpty) {
             
-            alert("Please Enter Name")
+            nameTextField.layer.borderColor = UIColor.red.cgColor
+            nameTextField.layer.borderWidth = 1
+            
+            nameErrorMsg.text = "Please Enter Name"
+            nameErrorMsg.isHidden = false
         }
         
-        //validating Name text field
-        else if(!TextFieldValidation.nameValidation(nameTextField.text!)) {
+        //Checking if name is valid
+        else if !(TextFieldValidation.nameValidation(nameTextField.text!)) {
             
-            alert("Name should be valid (i.e. Atleast 4 characters")
+            nameTextField.layer.borderColor = UIColor.red.cgColor
+            nameTextField.layer.borderWidth = 1
+            
+            nameErrorMsg.text = "Name should be valid (i.e. Atleast 4 characters)"
+            nameErrorMsg.isHidden = false
         }
                 
-        // Checking Email ID Text Field
-        else if (emailTextField.text!.isEmpty) {
+        // Checking Email ID Text Field is empty
+        if (emailTextField.text!.isEmpty) {
             
-            alert("Please Enter Email ID")
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            emailTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.text = "Please Enter Email ID"
+            emailErrorMsg.isHidden = false
         }
         
-        //validating Email text field
-        else if(!TextFieldValidation.emailValidation(emailTextField.text!)) {
+        //Checking if email id is valid
+        else if !(TextFieldValidation.emailValidation(emailTextField.text!)){
             
-            alert("Email ID should be in valid Format. E.g. abc@domain.com")
+            emailTextField.layer.borderColor = UIColor.red.cgColor
+            emailTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.text = "Email ID should be in valid Format. E.g. abc@domain.com"
+            emailErrorMsg.textColor = .systemRed
+            emailErrorMsg.isHidden = false
         }
         
-        // Checking Mobile Text Field
-        else if (mobileTextField.text!.isEmpty) {
+        // Checking Mobile Text Field is empty
+        if (mobileTextField.text!.isEmpty) {
             
-            alert("Please Enter Mobile No.")
+            mobileTextField.layer.borderColor = UIColor.red.cgColor
+            mobileTextField.layer.borderWidth = 1
+            
+            mobileErrorMsg.text = "Please Enter Mobile"
+            mobileErrorMsg.isHidden = false
         }
         
-        //validating Mobile text field
-        else if(!TextFieldValidation.mobileValidation(mobileTextField.text!)) {
+        //Checking if mobile is valid
+        else if !(TextFieldValidation.mobileValidation(mobileTextField.text!)){
             
-            alert("Mobile Number should be 10 digit number. E.g. 1234567890")
+            mobileTextField.layer.borderColor = UIColor.red.cgColor
+            mobileTextField.layer.borderWidth = 1
+            
+            mobileErrorMsg.text = "Mobile Number should be 10 digit number. E.g. 1234567890"
+            mobileErrorMsg.textColor = .systemRed
+            mobileErrorMsg.isHidden = false
         }
         
-        // Checking Password Text Field
-        else if (passwordTextField.text!.isEmpty) {
+        // Checking Password Text Field is empty
+        if (passwordTextField.text!.isEmpty) {
             
-            alert("Please Enter Password")
+            passwordErrorView.isHidden = false
+            
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderWidth = 1
+            
+            passwordErrorMsg.text = "Please Enter Password"
+            passwordErrorMsg.textColor = .systemRed
+            passwordErrorMsg.isHidden = false
         }
         
-        //validating Name text field
-        else if(!TextFieldValidation.passwordValidation(passwordTextField.text!)) {
+        //Checking if password is valid
+        else if !(TextFieldValidation.passwordValidation(passwordTextField.text!)){
             
-            alert("Password must be Alpha Numeric.")
+            passwordErrorView.isHidden = false
+            
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderWidth = 1
+            
+            passwordErrorMsg.text =  "Password must follows policy"
+            passwordErrorMsg.textColor = .systemRed
+            passwordErrorMsg.isHidden = false
         }
                 
-        // Checking Confirm Password Text Field
-        else if (confirmPasswordTextField.text!.isEmpty) {
+        // Checking Confirm Password Text Field is empty
+        if (confirmPasswordTextField.text!.isEmpty) {
             
-            alert("Please Enter Confirm Password")
+            confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+            confirmPasswordTextField.layer.borderWidth = 1
+            
+            confirmPasswordErrorMsg.text = "Please Enter Confirm Password"
+            confirmPasswordErrorMsg.textColor = .systemRed
+            confirmPasswordErrorMsg.isHidden = false
         }
         
-        //validating Name text field
-        else if(!(TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!))) {
+        //Checking if confirm password is valid
+        else if !(TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!)) {
             
-            alert("Should be same as password")
+            confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+            confirmPasswordTextField.layer.borderWidth = 1
+            
+            confirmPasswordErrorMsg.text = "Should be same as password"
+            confirmPasswordErrorMsg.textColor = .systemRed
+            confirmPasswordErrorMsg.isHidden = false
         }
         
         // Storing Data If Valid
-        else
+        if (nameErrorMsg.isHidden && emailErrorMsg.isHidden && mobileErrorMsg.isHidden && passwordErrorMsg.isHidden && confirmPasswordErrorMsg.isHidden)
         {
             
             //MARK: Creating user in firebase

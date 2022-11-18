@@ -53,10 +53,10 @@
                                                     <constraint firstAttribute="bottom" secondItem="YGa-QC-8xA" secondAttribute="bottom" constant="40" id="zAH-5S-Xdy"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bKI-Bp-l8s">
-                                                <rect key="frame" x="20" y="365" width="388" height="130"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="l3b-Dg-Ntq">
+                                                <rect key="frame" x="20" y="335" width="388" height="120"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-Zb-B4A">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-Zb-B4A">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4Mu-7d-2vS"/>
@@ -64,26 +64,37 @@
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                                         <connections>
+                                                            <action selector="usernameCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="QYC-3V-WbB"/>
                                                             <action selector="usernameValidation:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="EES-T6-cXq"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-GS-gvX">
-                                                        <rect key="frame" x="0.0" y="80" width="388" height="50"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gti-Us-whE">
+                                                        <rect key="frame" x="0.0" y="60" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVi-GS-gvX">
+                                                        <rect key="frame" x="0.0" y="70" width="388" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4rn-B3-Jye"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <action selector="passwordCheck:" destination="BYZ-38-t0r" eventType="editingChanged" id="qIb-D6-vU4"/>
+                                                        </connections>
                                                     </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fun-vQ-c8P">
+                                                        <rect key="frame" x="0.0" y="120" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="eVi-GS-gvX" firstAttribute="leading" secondItem="bKI-Bp-l8s" secondAttribute="leading" id="AYm-X1-8GV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="pc4-Zb-B4A" secondAttribute="trailing" id="GaE-v3-tPn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eVi-GS-gvX" secondAttribute="trailing" id="YND-ZD-IP3"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="EMz-ec-vwf">
-                                                <rect key="frame" x="114" y="545" width="200" height="105"/>
+                                                <rect key="frame" x="114" y="505" width="200" height="105"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-Ju-Y2x">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -123,13 +134,13 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="0.11258278145695365" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="bKI-Bp-l8s" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" constant="20" id="1XG-dO-pmR"/>
                                             <constraint firstItem="EMz-ec-vwf" firstAttribute="centerX" secondItem="qhb-t1-DVS" secondAttribute="centerX" id="3CZ-5Y-4u2"/>
                                             <constraint firstItem="Y2s-Gd-kbQ" firstAttribute="centerX" secondItem="qhb-t1-DVS" secondAttribute="centerX" id="E5T-Nr-Fwr"/>
-                                            <constraint firstAttribute="trailing" secondItem="bKI-Bp-l8s" secondAttribute="trailing" constant="20" id="NEN-zf-uN9"/>
-                                            <constraint firstItem="bKI-Bp-l8s" firstAttribute="top" secondItem="8ov-Gd-6kT" secondAttribute="bottom" constant="80" id="Uws-d0-ndE"/>
+                                            <constraint firstItem="l3b-Dg-Ntq" firstAttribute="top" secondItem="8ov-Gd-6kT" secondAttribute="bottom" constant="50" id="JqV-aO-jeN"/>
+                                            <constraint firstAttribute="trailing" secondItem="l3b-Dg-Ntq" secondAttribute="trailing" constant="20" id="TeE-Cr-oup"/>
+                                            <constraint firstItem="EMz-ec-vwf" firstAttribute="top" secondItem="l3b-Dg-Ntq" secondAttribute="bottom" constant="50" id="ZPR-dS-bbe"/>
                                             <constraint firstItem="8ov-Gd-6kT" firstAttribute="top" secondItem="qhb-t1-DVS" secondAttribute="top" constant="-65" id="fDa-Zm-A1I"/>
-                                            <constraint firstItem="EMz-ec-vwf" firstAttribute="top" secondItem="bKI-Bp-l8s" secondAttribute="bottom" constant="50" id="iN9-3Y-tna"/>
+                                            <constraint firstItem="l3b-Dg-Ntq" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" constant="20" id="iy3-tB-0j2"/>
                                             <constraint firstItem="EMz-ec-vwf" firstAttribute="centerX" secondItem="qhb-t1-DVS" secondAttribute="centerX" id="r6U-q0-siq"/>
                                             <constraint firstItem="8ov-Gd-6kT" firstAttribute="leading" secondItem="qhb-t1-DVS" secondAttribute="leading" id="thb-gL-CaY"/>
                                             <constraint firstAttribute="height" constant="900" id="wOa-EO-gHu"/>
@@ -162,7 +173,9 @@
                     <navigationItem key="navigationItem" id="FhK-on-GeS"/>
                     <connections>
                         <outlet property="appImage" destination="Y2s-Gd-kbQ" id="SPS-x9-W8F"/>
+                        <outlet property="emailErrorMsg" destination="Gti-Us-whE" id="ewI-N6-lbQ"/>
                         <outlet property="loginButton" destination="0ZX-Ju-Y2x" id="8fb-vg-Ipz"/>
+                        <outlet property="passwordErrorMsg" destination="fun-vQ-c8P" id="MvZ-BG-5dh"/>
                         <outlet property="passwordTextField" destination="eVi-GS-gvX" id="fwB-dg-SOp"/>
                         <outlet property="signUpButton" destination="geu-Sc-aye" id="4Q7-zL-cnL"/>
                         <outlet property="usernameTextField" destination="pc4-Zb-B4A" id="0aa-UP-CCJ"/>
@@ -243,7 +256,7 @@
                                 <rect key="frame" x="0.0" y="94" width="428" height="832"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50a-RI-wSa" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="10" width="428" height="1000"/>
+                                        <rect key="frame" x="0.0" y="10" width="428" height="1100"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="9Uz-6x-gVO">
                                                 <rect key="frame" x="119" y="40" width="190" height="180"/>
@@ -252,8 +265,8 @@
                                                     <constraint firstAttribute="height" constant="180" id="wiR-aN-IoU"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZRP-S7-USv">
-                                                <rect key="frame" x="20" y="260" width="388" height="330"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZRP-S7-USv">
+                                                <rect key="frame" x="20" y="260" width="388" height="310"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="EXw-WI-xCD">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="50"/>
@@ -263,66 +276,127 @@
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
+                                                            <action selector="nameCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="56C-TO-1JG"/>
                                                             <action selector="nameValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="UGz-QK-Kpt"/>
                                                         </connections>
                                                     </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C6-h0-KlY">
+                                                        <rect key="frame" x="0.0" y="57.666666666666686" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="u7X-bl-C3f">
-                                                        <rect key="frame" x="0.0" y="70" width="388" height="50"/>
+                                                        <rect key="frame" x="0.0" y="65" width="388" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2nI-Cr-qdW"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                         <connections>
+                                                            <action selector="emailCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="VZN-Up-rpI"/>
                                                             <action selector="emailValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="89f-YB-2J3"/>
                                                         </connections>
                                                     </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsp-Yq-qWG">
+                                                        <rect key="frame" x="0.0" y="122.66666666666669" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="gPO-hu-58F">
-                                                        <rect key="frame" x="0.0" y="140" width="388" height="50"/>
+                                                        <rect key="frame" x="0.0" y="130" width="388" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="2Y3-en-nqb"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                         <connections>
+                                                            <action selector="mobileCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="CPJ-eI-c9r"/>
                                                             <action selector="mobileValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="d4p-kp-V4v"/>
                                                         </connections>
                                                     </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA3-8o-qsk">
+                                                        <rect key="frame" x="0.0" y="187.66666666666663" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ooa-If-Y6F">
-                                                        <rect key="frame" x="0.0" y="210" width="388" height="50"/>
+                                                        <rect key="frame" x="0.0" y="195" width="388" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="97a-vo-kDD"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
+                                                            <action selector="passwordCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="bSD-UP-Y8F"/>
                                                             <action selector="passwordValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="hyG-fO-zCV"/>
                                                         </connections>
                                                     </textField>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="nE0-O0-5tp">
+                                                        <rect key="frame" x="0.0" y="252.6666666666666" width="388" height="22.666666666666657"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAS-A8-M9J">
+                                                                <rect key="frame" x="0.0" y="0.0" width="324" height="22.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCy-eL-2Ip">
+                                                                <rect key="frame" x="338" y="0.0" width="50" height="22.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="22.670000000000002" id="ZTq-GW-3IW"/>
+                                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="p1a-dv-wdh"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="info.circle.fill" catalog="system">
+                                                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="o89-Sy-46F">
-                                                        <rect key="frame" x="0.0" y="280" width="388" height="50"/>
+                                                        <rect key="frame" x="0.0" y="260" width="388" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="fLG-0p-ojv"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
+                                                            <action selector="confirmPasswordCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="8a3-4z-ASo"/>
                                                             <action selector="confirmPasswordValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="W7n-Rp-FMo"/>
                                                         </connections>
                                                     </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2L-1o-gUx">
+                                                        <rect key="frame" x="0.0" y="310" width="388" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="aA3-8o-qsk" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="7zH-F4-Eha"/>
                                                     <constraint firstAttribute="trailing" secondItem="o89-Sy-46F" secondAttribute="trailing" id="9To-xJ-ki1"/>
+                                                    <constraint firstItem="qsp-Yq-qWG" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="9oB-xQ-3f0"/>
                                                     <constraint firstAttribute="trailing" secondItem="EXw-WI-xCD" secondAttribute="trailing" id="AvD-lz-SY6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qsp-Yq-qWG" secondAttribute="trailing" id="D8a-FZ-Sgv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aA3-8o-qsk" secondAttribute="trailing" id="HyT-R1-qYM"/>
+                                                    <constraint firstItem="y2L-1o-gUx" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="I09-he-qk7"/>
                                                     <constraint firstAttribute="trailing" secondItem="u7X-bl-C3f" secondAttribute="trailing" id="Nbt-ua-17F"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ooa-If-Y6F" secondAttribute="trailing" id="Suo-qh-JlE"/>
+                                                    <constraint firstItem="nE0-O0-5tp" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="T8e-i3-ffm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6C6-h0-KlY" secondAttribute="trailing" id="WTy-uU-iKR"/>
                                                     <constraint firstAttribute="trailing" secondItem="gPO-hu-58F" secondAttribute="trailing" id="Xh7-jh-HRg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="y2L-1o-gUx" secondAttribute="trailing" id="aBG-8P-SC3"/>
                                                     <constraint firstItem="gPO-hu-58F" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="i5C-fj-fdT"/>
                                                     <constraint firstItem="u7X-bl-C3f" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="iZT-Iw-aAh"/>
+                                                    <constraint firstItem="6C6-h0-KlY" firstAttribute="leading" secondItem="ZRP-S7-USv" secondAttribute="leading" id="qfC-0z-kgN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nE0-O0-5tp" secondAttribute="trailing" id="qjf-2X-k5r"/>
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k5-5t-eJR">
-                                                <rect key="frame" x="124" y="640" width="180" height="50"/>
+                                                <rect key="frame" x="124" y="620" width="180" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="c1f-Ze-d9O"/>
                                                     <constraint firstAttribute="height" constant="50" id="zUl-SI-BJx"/>
@@ -339,7 +413,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1000" id="7C4-Zi-ch1"/>
+                                            <constraint firstAttribute="height" constant="1100" id="7C4-Zi-ch1"/>
                                             <constraint firstAttribute="trailing" secondItem="ZRP-S7-USv" secondAttribute="trailing" constant="20" id="Dt3-Hh-IFe"/>
                                             <constraint firstItem="9Uz-6x-gVO" firstAttribute="centerX" secondItem="50a-RI-wSa" secondAttribute="centerX" id="M8J-Gk-euQ"/>
                                             <constraint firstItem="ZRP-S7-USv" firstAttribute="top" secondItem="9Uz-6x-gVO" secondAttribute="bottom" constant="40" id="YX6-nQ-50W"/>
@@ -375,10 +449,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordErrorMsg" destination="y2L-1o-gUx" id="eDB-bP-fwd"/>
                         <outlet property="confirmPasswordTextField" destination="o89-Sy-46F" id="g45-7E-2rD"/>
+                        <outlet property="emailErrorMsg" destination="qsp-Yq-qWG" id="CNe-H4-eQz"/>
                         <outlet property="emailTextField" destination="u7X-bl-C3f" id="TEV-OS-4uO"/>
+                        <outlet property="mobileErrorMsg" destination="aA3-8o-qsk" id="PgM-Lk-WXg"/>
                         <outlet property="mobileTextField" destination="gPO-hu-58F" id="ZHd-qs-PsJ"/>
+                        <outlet property="nameErrorMsg" destination="6C6-h0-KlY" id="AAd-DJ-9SN"/>
                         <outlet property="nameTextField" destination="EXw-WI-xCD" id="5As-VT-fx2"/>
+                        <outlet property="passwordErrorMsg" destination="FAS-A8-M9J" id="AGi-Zy-Nrh"/>
+                        <outlet property="passwordErrorView" destination="nE0-O0-5tp" id="cgy-cI-CUu"/>
+                        <outlet property="passwordInfo" destination="VCy-eL-2Ip" id="NGj-DS-GhV"/>
                         <outlet property="passwordTextField" destination="Ooa-If-Y6F" id="K2c-6R-NvR"/>
                         <outlet property="signUpButton" destination="6k5-5t-eJR" id="jXD-qA-eIs"/>
                         <outlet property="signUpImage" destination="9Uz-6x-gVO" id="dFj-9D-zub"/>
@@ -410,6 +491,7 @@
     <resources>
         <image name="bikeLogo" width="350" height="350"/>
         <image name="chevron.backward.2" catalog="system" width="128" height="105"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="login" width="612" height="566"/>
         <image name="pngwing.com" width="1988" height="1136"/>
         <systemColor name="systemBackgroundColor">
@@ -417,6 +499,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

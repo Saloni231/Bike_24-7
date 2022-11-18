@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var passwordErrorMsg: UILabel!
+    @IBOutlet weak var emailErrorMsg: UILabel!
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -30,12 +33,6 @@ class LoginViewController: UIViewController {
         
         //Welcome View
         welcomeView.layer.cornerRadius = 70
-        
-        //Text Field Border
-        usernameTextField.layer.borderWidth = 0.2
-        usernameTextField.layer.cornerRadius = 9
-        passwordTextField.layer.borderWidth = 0.2
-        passwordTextField.layer.cornerRadius = 9
         
         //Imagviews for textfield logo
         let emailImageView = UIImageView()
@@ -59,19 +56,62 @@ class LoginViewController: UIViewController {
         //resetting text fields
         usernameTextField.text = ""
         passwordTextField.text = ""
+        
+        //Text Field Border
+        usernameTextField.layer.borderWidth = 0.2
+        usernameTextField.layer.cornerRadius = 9
+        usernameTextField.layer.borderColor = UIColor.black.cgColor
+        passwordTextField.layer.borderWidth = 0.2
+        passwordTextField.layer.cornerRadius = 9
+        passwordTextField.layer.borderColor = UIColor.black.cgColor
+        
+        //resetting error message
+        emailErrorMsg.isHidden = true
+        passwordErrorMsg.isHidden = true
     }
     
     //MARK: Username Text Field Validation
     
-    //Validating username when editing did end
+    //Validating email id when editing did end
     //MARK: Using Editing Did End
     @IBAction func usernameValidation(_ sender: Any) {
         
         if (!(TextFieldValidation.emailValidation(usernameTextField.text!)) && !(usernameTextField.text!.isEmpty)) {
             
-            alert("Email ID should be in valid Format. E.g. abc@domain.com")
+            usernameTextField.layer.borderColor = UIColor.red.cgColor
+            usernameTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.text = "Email ID should be in valid Format. E.g. abc@domain.com"
+            emailErrorMsg.isHidden = false
         }
     }
+    
+    //Checking if email id satisfy email rules
+    //MARK: Using Editing Changed
+    @IBAction func usernameCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.emailValidation(usernameTextField.text!)){
+            
+            usernameTextField.layer.borderColor = UIColor.green.cgColor
+            usernameTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.isHidden = true
+        }
+    }
+    
+    //Checking if password follows password rule
+    //MARK: Using Editing Changed
+    @IBAction func passwordCheck(_ sender: Any) {
+        
+        if (TextFieldValidation.passwordValidation(passwordTextField.text!)) {
+            
+            passwordTextField.layer.borderColor = UIColor.green.cgColor
+            passwordTextField.layer.borderWidth = 1
+            
+            passwordErrorMsg.isHidden = true
+        }
+    }
+    
     
     //MARK: Credential Validation
     
@@ -80,23 +120,38 @@ class LoginViewController: UIViewController {
         // Checking if username text field is empty
         if (usernameTextField.text!.isEmpty) {
             
-            alert("Please Enter Email ID")
+            usernameTextField.layer.borderColor = UIColor.red.cgColor
+            usernameTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.text = "Please Enter Email ID"
+            emailErrorMsg.isHidden = false
+
         }
         
         //Checking if username is valid
         else if !(TextFieldValidation.emailValidation(usernameTextField.text!)) {
             
-            alert("Username should be in valid Format. E.g. abc@domain.com")
+            usernameTextField.layer.borderColor = UIColor.red.cgColor
+            usernameTextField.layer.borderWidth = 1
+            
+            emailErrorMsg.text = "Username should be in valid Format. E.g. abc@domain.com"
+            emailErrorMsg.isHidden = false
         }
+    
         
         //Checking if password text field is empty
-        else if (passwordTextField.text!.isEmpty) {
+        if (passwordTextField.text!.isEmpty) {
             
-            alert("Please Enter Password")
+            passwordTextField.layer.borderColor = UIColor.red.cgColor
+            passwordTextField.layer.borderWidth = 1
+            
+            passwordErrorMsg.text = "Please Enter Password"
+            passwordErrorMsg.isHidden = false
+            
         }
         
         //Firebase authentication
-        else {
+        if(emailErrorMsg.isHidden && passwordErrorMsg.isHidden) {
             
             //MARK: Sign In using Firebase
             Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!, completion: {(result, error) -> Void in
