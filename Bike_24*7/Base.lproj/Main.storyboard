@@ -3,6 +3,7 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -339,6 +340,9 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAS-A8-M9J">
                                                                 <rect key="frame" x="0.0" y="0.0" width="324" height="22.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="324" id="bHn-bs-yCd"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="16"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -347,12 +351,15 @@
                                                                 <rect key="frame" x="338" y="0.0" width="50" height="22.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22.670000000000002" id="ZTq-GW-3IW"/>
-                                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="p1a-dv-wdh"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="p1a-dv-wdh"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="info.circle.fill" catalog="system">
                                                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="displayPolicy:" destination="P1Z-on-r4J" eventType="touchUpInside" id="phM-AN-935"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -470,6 +477,194 @@
             </objects>
             <point key="canvasLocation" x="1586.9158878504672" y="63.498920086393092"/>
         </scene>
+        <!--Password Policy View Controller-->
+        <scene sceneID="wDb-ID-wdP">
+            <objects>
+                <viewController storyboardIdentifier="PasswordPolicyViewController" id="o3A-Vj-DBJ" customClass="PasswordPolicyViewController" customModule="Bike_24_7" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Gg8-nr-huP">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SV-bZ-WMn" userLabel="Content View">
+                                <rect key="frame" x="20" y="268" width="388" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pje-qi-GGG">
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jf8-Ex-W6z">
+                                                <rect key="frame" x="0.0" y="26.333333333333329" width="50" height="27.666666666666671"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="PAL-t2-YKl"/>
+                                                    <constraint firstAttribute="width" constant="50" id="dRy-b6-jb6"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password should meet following criteria" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NR-Pq-y5c">
+                                                <rect key="frame" x="60" y="18.333333333333318" width="225" height="43.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZg-io-F3r">
+                                                <rect key="frame" x="295" y="20" width="93" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="RjI-3w-xpt"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="W3t-oH-vgk"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="multiply" catalog="system" symbolScale="large"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="dismissView:" destination="o3A-Vj-DBJ" eventType="touchUpInside" id="lCG-ac-taR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="NAY-b0-qJ0"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qod-ir-Opf">
+                                        <rect key="frame" x="20" y="100" width="348" height="280"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="km7-tD-AAO">
+                                                <rect key="frame" x="0.0" y="0.0" width="348" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.point.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Puf-pB-Alo">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="20" height="35"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="0pt-rf-J3y"/>
+                                                            <constraint firstAttribute="width" constant="20" id="gsB-EE-PYu"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 6 character long." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjH-f1-1Z2">
+                                                        <rect key="frame" x="40" y="0.0" width="308" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GoZ-Y0-bPT">
+                                                <rect key="frame" x="0.0" y="60" width="348" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.point.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LRl-PF-7K4">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="20" height="35"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="tI6-D2-s4R"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contain at least 1 uppercase letter." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIw-HS-8tb">
+                                                        <rect key="frame" x="40" y="0.0" width="308" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="sEz-sQ-ITe"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xg0-cg-Ai8">
+                                                <rect key="frame" x="0.0" y="120" width="348" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.point.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zhW-Bw-3uF">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="20" height="35"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="Oe0-o2-xoU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contain at least 1 lower case letter" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zd-P9-kU6">
+                                                        <rect key="frame" x="40" y="0.0" width="308" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="XeU-U1-YmF"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wWz-bn-XnB">
+                                                <rect key="frame" x="0.0" y="180" width="348" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.point.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9yE-rI-gRt">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="20" height="35"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="a0M-g8-afl"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contain at least 1 number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU1-OX-xad">
+                                                        <rect key="frame" x="40" y="0.0" width="308" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="RY4-QL-xvl"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bGe-AX-qfG">
+                                                <rect key="frame" x="0.0" y="240" width="348" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.point.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B2S-Y8-Ba3">
+                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="20" height="35"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="97o-fF-dgB"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contain at least 1 special character." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trS-b1-irr">
+                                                        <rect key="frame" x="40" y="0.0" width="308" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="tJ9-Fa-gGz"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="Qod-ir-Opf" firstAttribute="leading" secondItem="6SV-bZ-WMn" secondAttribute="leading" constant="20" id="CTM-We-Fsl"/>
+                                    <constraint firstItem="Qod-ir-Opf" firstAttribute="top" secondItem="Pje-qi-GGG" secondAttribute="bottom" constant="20" id="MeH-vW-FKw"/>
+                                    <constraint firstItem="Pje-qi-GGG" firstAttribute="leading" secondItem="6SV-bZ-WMn" secondAttribute="leading" id="QAM-HG-Hui"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qod-ir-Opf" secondAttribute="trailing" constant="20" id="hZY-tp-2bj"/>
+                                    <constraint firstItem="Pje-qi-GGG" firstAttribute="top" secondItem="6SV-bZ-WMn" secondAttribute="top" id="hsP-sj-y6L"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pje-qi-GGG" secondAttribute="trailing" id="iYu-13-wAk"/>
+                                    <constraint firstAttribute="height" constant="400" id="pgE-ez-rCN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mxs-mF-2DP"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.38410596026490068" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6SV-bZ-WMn" firstAttribute="centerY" secondItem="mxs-mF-2DP" secondAttribute="centerY" id="3th-Pp-iCc"/>
+                            <constraint firstItem="6SV-bZ-WMn" firstAttribute="centerX" secondItem="mxs-mF-2DP" secondAttribute="centerX" id="Qhz-nH-sin"/>
+                            <constraint firstItem="mxs-mF-2DP" firstAttribute="trailing" secondItem="6SV-bZ-WMn" secondAttribute="trailing" constant="20" id="XAw-g0-Qt2"/>
+                            <constraint firstItem="6SV-bZ-WMn" firstAttribute="leading" secondItem="mxs-mF-2DP" secondAttribute="leading" constant="20" id="tMp-Xc-JUs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="6SV-bZ-WMn" id="9kj-nd-p8G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPy-pN-sQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2236" y="79"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7r5-mY-BGh">
             <objects>
@@ -491,11 +686,17 @@
     <resources>
         <image name="bikeLogo" width="350" height="350"/>
         <image name="chevron.backward.2" catalog="system" width="128" height="105"/>
+        <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
+        <image name="hand.point.right.fill" catalog="system" width="128" height="99"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="login" width="612" height="566"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="pngwing.com" width="1988" height="1136"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

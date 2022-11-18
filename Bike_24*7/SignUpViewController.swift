@@ -198,7 +198,7 @@ class SignUpViewController: UIViewController {
             passwordTextField.layer.borderColor = UIColor.red.cgColor
             passwordTextField.layer.borderWidth = 1
             
-            passwordErrorMsg.text =  "Password must follows policy"
+            passwordErrorMsg.text =  "Password must follow policy rules."
             passwordErrorMsg.textColor = .systemRed
             passwordErrorMsg.isHidden = false
         }
@@ -218,6 +218,17 @@ class SignUpViewController: UIViewController {
             passwordErrorView.isHidden = true
         }
     }
+    
+    //Displaying password Policy
+    @IBAction func displayPolicy(_ sender: Any) {
+        
+        let passwordVC = self.storyboard?.instantiateViewController(withIdentifier: "PasswordPolicyViewController") as! PasswordPolicyViewController
+        passwordVC.modalPresentationStyle = .overCurrentContext
+        passwordVC.modalTransitionStyle = .crossDissolve
+        self.present(passwordVC, animated: true, completion: nil)
+        
+    }
+    
     
     //MARK: Confirm Password Text Field Validation
     
