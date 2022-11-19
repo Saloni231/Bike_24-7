@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQy-DX-BPa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQy-DX-BPa">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -293,7 +293,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="2nI-Cr-qdW"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <connections>
                                                             <action selector="emailCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="VZN-Up-rpI"/>
                                                             <action selector="emailValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="89f-YB-2J3"/>
@@ -329,7 +329,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="97a-vo-kDD"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                                                         <connections>
                                                             <action selector="passwordCheck:" destination="P1Z-on-r4J" eventType="editingChanged" id="bSD-UP-Y8F"/>
                                                             <action selector="passwordValidation:" destination="P1Z-on-r4J" eventType="editingDidEnd" id="hyG-fO-zCV"/>

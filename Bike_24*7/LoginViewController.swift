@@ -99,20 +99,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //Checking if password follows password rule
-    //MARK: Using Editing Changed
-    @IBAction func passwordCheck(_ sender: Any) {
-        
-        if (TextFieldValidation.passwordValidation(passwordTextField.text!)) {
-            
-            passwordTextField.layer.borderColor = UIColor.green.cgColor
-            passwordTextField.layer.borderWidth = 1
-            
-            passwordErrorMsg.isHidden = true
-        }
-    }
-    
-    
     //MARK: Credential Validation
     
     @IBAction func loginButtonPressed(_ sender: Any) {

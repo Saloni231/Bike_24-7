@@ -13,6 +13,7 @@ import FirebaseDatabase
 class SignUpViewController: UIViewController {
     
     
+    
     //MARK: Outlet Connection
     
     @IBOutlet weak var signUpImage: UIImageView!
@@ -34,9 +35,19 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     
+    let passwordEyeImageView = UIImageView()
+    let confirmPasswordEyeImageView = UIImageView()
+    
+    var passwordImageClicked = false
+    var confirmPasswordImageClicked = false
+    
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Hiding eye buttons
+        passwordEyeImageView.isHidden = true
+        confirmPasswordEyeImageView.isHidden = true
 
         //Display Image
         signUpImage.layer.cornerRadius = signUpImage.frame.height / 2
@@ -58,19 +69,80 @@ class SignUpViewController: UIViewController {
         mobileImageView.image = UIImage(named: "phone.png")
         passwordImageView.image = UIImage(named: "password.png")
         confirmPasswordImageView.image = UIImage(named: "ConfirmPassword.png")
+        passwordEyeImageView.image = UIImage(named: "eye.png")
+        confirmPasswordEyeImageView.image = UIImage(named: "eye.png")
+        
+        
+        let contentViewPassword = UIView()
+        let contentViewConfirmPassword = UIView()
+        
+        contentViewPassword.addSubview(passwordEyeImageView)
+        contentViewConfirmPassword.addSubview(confirmPasswordEyeImageView)
+        
+        contentViewPassword.frame = CGRect(x: 0, y: 0, width: UIImage(named: "eye.png")!.size.width, height: UIImage(named: "eye.png")!.size.height)
+        passwordEyeImageView.frame = CGRect(x: -10, y: 0, width: UIImage(named: "eye.png")!.size.width, height: UIImage(named: "eye.png")!.size.height)
+        
+        contentViewConfirmPassword.frame = CGRect(x: 0, y: 0, width: UIImage(named: "eye.png")!.size.width, height: UIImage(named: "eye.png")!.size.height)
+        confirmPasswordEyeImageView.frame = CGRect(x: -10, y: 0, width: UIImage(named: "eye.png")!.size.width, height: UIImage(named: "eye.png")!.size.height)
+        
+        
+        
         
         // Settign Properties ti textfields
         nameTextField.leftViewMode = .always
         emailTextField.leftViewMode = .always
         mobileTextField.leftViewMode = .always
         passwordTextField.leftViewMode = .always
+        passwordTextField.rightViewMode = .always
         confirmPasswordTextField.leftViewMode = .always
+        confirmPasswordTextField.rightViewMode = .always
         
         nameTextField.leftView = usernameImageView
         emailTextField.leftView = emailImageView
         mobileTextField.leftView = mobileImageView
         passwordTextField.leftView = passwordImageView
         confirmPasswordTextField.leftView = confirmPasswordImageView
+        passwordTextField.rightView = contentViewPassword
+        confirmPasswordTextField.rightView = contentViewConfirmPassword
+        
+        let tapGestureRecognizerPassword = UITapGestureRecognizer(target: self, action: #selector(passwordEyeClicked(tapGestureRecognizer:)))
+        passwordEyeImageView.isUserInteractionEnabled = true
+        passwordEyeImageView.addGestureRecognizer(tapGestureRecognizerPassword)
+        
+        let tapGestureRecognizerConfirmPassword = UITapGestureRecognizer(target: self, action: #selector(ConfirmpasswordEyeClicked(tapGestureRecognizer:)))
+        confirmPasswordEyeImageView.isUserInteractionEnabled = true
+        confirmPasswordEyeImageView.addGestureRecognizer(tapGestureRecognizerConfirmPassword)
+        
+    }
+    
+    @objc func passwordEyeClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        if passwordImageClicked {
+            passwordImageClicked = false
+            tappedImage.image = UIImage(named: "hide.png")
+            passwordTextField.isSecureTextEntry = false
+        }
+        else
+        {
+            passwordImageClicked = true
+            tappedImage.image = UIImage(named: "eye.png")
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    
+    @objc func ConfirmpasswordEyeClicked(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        if confirmPasswordImageClicked {
+            confirmPasswordImageClicked = false
+            tappedImage.image = UIImage(named: "hide.png")
+            confirmPasswordTextField.isSecureTextEntry = false
+        }
+        else
+        {
+            confirmPasswordImageClicked = true
+            tappedImage.image = UIImage(named: "eye.png")
+            confirmPasswordTextField.isSecureTextEntry = true
+        }
     }
     
     //MARK: View will appear
@@ -208,6 +280,7 @@ class SignUpViewController: UIViewController {
     //MARK: Using Editing Changed
     @IBAction func passwordCheck(_ sender: Any) {
         
+        passwordEyeImageView.isHidden = false
         if (TextFieldValidation.passwordValidation(passwordTextField.text!)) {
             
             passwordTextField.layer.borderColor = UIColor.green.cgColor
@@ -251,6 +324,7 @@ class SignUpViewController: UIViewController {
     //Checking confirm password text field while editing changed
     //MARK: Using Editing Changed
     @IBAction func confirmPasswordCheck(_ sender: Any) {
+        confirmPasswordEyeImageView.isHidden = false
         
         if (TextFieldValidation.confirmPasswordValidation(passwordTextField.text!, confirmPasswordTextField.text!)) {
             
