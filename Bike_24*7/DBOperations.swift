@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class DBOperations: NSObject {
-
+    
     //MARK: Instance of DBOperationInstance
     class func dbOperationInstance() -> DBOperations {
         

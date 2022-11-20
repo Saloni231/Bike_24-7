@@ -119,14 +119,14 @@ class SignUpViewController: UIViewController {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         if passwordImageClicked {
             passwordImageClicked = false
-            tappedImage.image = UIImage(named: "hide.png")
-            passwordTextField.isSecureTextEntry = false
+            tappedImage.image = UIImage(named: "eye.png")
+            passwordTextField.isSecureTextEntry = true
         }
         else
         {
             passwordImageClicked = true
-            tappedImage.image = UIImage(named: "eye.png")
-            passwordTextField.isSecureTextEntry = true
+            tappedImage.image = UIImage(named: "hide.png")
+            passwordTextField.isSecureTextEntry = false
         }
     }
     
@@ -134,14 +134,14 @@ class SignUpViewController: UIViewController {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         if confirmPasswordImageClicked {
             confirmPasswordImageClicked = false
-            tappedImage.image = UIImage(named: "hide.png")
-            confirmPasswordTextField.isSecureTextEntry = false
+            tappedImage.image = UIImage(named: "eye.png")
+            confirmPasswordTextField.isSecureTextEntry = true
         }
         else
         {
             confirmPasswordImageClicked = true
-            tappedImage.image = UIImage(named: "eye.png")
-            confirmPasswordTextField.isSecureTextEntry = true
+            tappedImage.image = UIImage(named: "hide.png")
+            confirmPasswordTextField.isSecureTextEntry = false
         }
     }
     
