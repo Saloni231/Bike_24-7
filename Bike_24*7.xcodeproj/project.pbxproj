@@ -145,14 +145,12 @@
 		9A52BFB6292290A300AEC548 /* Bike_24*7 */ = {
 			isa = PBXGroup;
 			children = (
+				9AC189FD292BD75B000D49DC /* Validation */,
+				9AC189FC292BD750000D49DC /* Views */,
+				9AC189FB292BD745000D49DC /* ViewModel */,
+				9AC189FA292BD739000D49DC /* Model */,
 				9A52BFB7292290A300AEC548 /* AppDelegate.swift */,
 				9A52BFB9292290A300AEC548 /* SceneDelegate.swift */,
-				9A52BFBB292290A300AEC548 /* LoginViewController.swift */,
-				9A52BFEA292294F400AEC548 /* SignUpViewController.swift */,
-				9AEF40872924EC3800EB1699 /* HomePageViewController.swift */,
-				9AF47DEA2927E3F600B599DB /* PasswordPolicyViewController.swift */,
-				9A52BFEC292295BA00AEC548 /* TextFieldValidation.swift */,
-				9A52BFF1292297D800AEC548 /* DBOperations.swift */,
 				9A52BFF32922A1A800AEC548 /* KeyChainOperations.swift */,
 				9A52BFBD292290A300AEC548 /* Main.storyboard */,
 				9A52BFC3292290A500AEC548 /* Assets.xcassets */,
@@ -179,6 +177,56 @@
 				9A52BFDD292290A500AEC548 /* Bike_24_7UITestsLaunchTests.swift */,
 			);
 			path = "Bike_24*7UITests";
+			sourceTree = "<group>";
+		};
+		9AC189FA292BD739000D49DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AC189FB292BD745000D49DC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A52BFF1292297D800AEC548 /* DBOperations.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9AC189FC292BD750000D49DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9AC189FF292BD7FB000D49DC /* Sign Up */,
+				9AC189FE292BD7ED000D49DC /* Login */,
+				9AEF40872924EC3800EB1699 /* HomePageViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9AC189FD292BD75B000D49DC /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				9A52BFEC292295BA00AEC548 /* TextFieldValidation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		9AC189FE292BD7ED000D49DC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9A52BFBB292290A300AEC548 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9AC189FF292BD7FB000D49DC /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				9AF47DEA2927E3F600B599DB /* PasswordPolicyViewController.swift */,
+				9A52BFEA292294F400AEC548 /* SignUpViewController.swift */,
+			);
+			path = "Sign Up";
 			sourceTree = "<group>";
 		};
 		D2FD74DA19285EA9CE779E15 /* Frameworks */ = {
