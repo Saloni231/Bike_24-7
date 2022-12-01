@@ -221,6 +221,58 @@
             </objects>
             <point key="canvasLocation" x="969" y="757"/>
         </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="cUy-qr-s6g">
+            <objects>
+                <viewController storyboardIdentifier="CategoriesViewController" id="j8o-JC-YXh" customClass="CategoriesViewController" customModule="Bike_24_7" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zyb-l3-jja">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jtJ-nC-To0">
+                                <rect key="frame" x="0.0" y="167" width="428" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FED-tO-E2K">
+                                    <size key="itemSize" width="202" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zyb-l3-jja" id="Esj-Q1-lGB"/>
+                                    <outlet property="delegate" destination="zyb-l3-jja" id="xnZ-3a-RUK"/>
+                                </connections>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJn-He-YTN">
+                                <rect key="frame" x="20" y="97" width="388" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="czk-bU-ydx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j7x-dB-jJ3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jtJ-nC-To0" firstAttribute="top" secondItem="cJn-He-YTN" secondAttribute="bottom" constant="20" id="Chj-bz-jpx"/>
+                            <constraint firstItem="jtJ-nC-To0" firstAttribute="trailing" secondItem="j7x-dB-jJ3" secondAttribute="trailing" id="J1i-FU-jdx"/>
+                            <constraint firstItem="cJn-He-YTN" firstAttribute="top" secondItem="j7x-dB-jJ3" secondAttribute="top" constant="50" id="LAX-ba-A9D"/>
+                            <constraint firstItem="j7x-dB-jJ3" firstAttribute="trailing" secondItem="cJn-He-YTN" secondAttribute="trailing" constant="20" id="eYs-14-6ds"/>
+                            <constraint firstAttribute="bottom" secondItem="jtJ-nC-To0" secondAttribute="bottom" id="izb-N2-kWa"/>
+                            <constraint firstItem="cJn-He-YTN" firstAttribute="leading" secondItem="j7x-dB-jJ3" secondAttribute="leading" constant="20" id="mPb-da-eyN"/>
+                            <constraint firstItem="jtJ-nC-To0" firstAttribute="leading" secondItem="j7x-dB-jJ3" secondAttribute="leading" id="tnz-FV-1qI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoriesCollectionView" destination="jtJ-nC-To0" id="zv3-1B-I9C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DK0-yt-PtF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659.8130841121495" y="716.63066954643637"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ocL-7e-8uc">
             <objects>

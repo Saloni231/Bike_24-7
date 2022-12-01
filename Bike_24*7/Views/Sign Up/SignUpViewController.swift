@@ -462,7 +462,7 @@ class SignUpViewController: UIViewController {
                     
                     //MARK: Success Alert
                     let successAlert = UIAlertController(title: "Sign Up Success!!", message: "User Created Successfully.", preferredStyle: .alert)
-                    let home = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController")
+                    let home = self.storyboard?.instantiateViewController(withIdentifier: "CategoriesViewController")
                     successAlert.view.tintColor = .systemGreen
                     successAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: {(action: UIAlertAction!) in self.navigationController?.pushViewController(home!, animated: true)}))
                     self.present(successAlert, animated: true, completion: nil)

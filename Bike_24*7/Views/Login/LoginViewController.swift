@@ -145,7 +145,7 @@ class LoginViewController: UIViewController {
                 
                 if error == nil {
                     
-                    let home = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController")
+                    let home = self.storyboard?.instantiateViewController(withIdentifier: "CategoriesViewController")
                     self.navigationController?.pushViewController(home!, animated: true)
                 }
                 else {

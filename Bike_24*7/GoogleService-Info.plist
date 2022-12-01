@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:428660930908:ios:f5c477bbb5d044b68be999</string>
+	<string>1:428660930908:ios:beb65154052192478be999</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-auth-5838a-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
